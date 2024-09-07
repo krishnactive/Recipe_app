@@ -105,6 +105,24 @@ form button[type="submit"]:hover,.recipe button:hover{
     margin: 18px auto;
     background-color:#f44336 ;
 }
+/* Recipe details */
+.recipe-details{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    background-color: #4a3b3b;
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+    overflow-y:scroll;
+    
+}
+
 
 /* Responsive code */
 @media screen and (max-width:600px) {

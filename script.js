@@ -1,7 +1,8 @@
 const searchBox = document.querySelector('.searchBox');
 const searchBtn = document.querySelector('.searchBtn');
 const recipeContainer = document.querySelector('.recipe-container');
-const recipedetialscontentr = document.querySelector('.recipe-detials-content');
+const recipeDetialsContent = document.querySelector('.recipe-detials-content');
+const recipeCloseBtn = document.querySelector('.recipe-close-btn');
 
 
 //themealdb api is used here 
@@ -37,7 +38,39 @@ const fetchRecipes = async (query)=>{
     })
 }
 
+const openRecipePopup=(meal)=>{
+    recipeDetialsContent.innerHTML = `
+        <h2 class="recipeName">${meal.strMeal}</h2>
+        <h3>Ingredients</h3>
+        <ul class = "IngredientList">${fetchIngredients(meal)}</ul>
+        <div>
+            <h3>Instructions:</h3>
+            <p class = "recipeinstructions">${meal.strInstructions}</p>
+        </div>
+    `
+   
+    recipeDetialsContent.parentElement.style.display = "block";
+}
 
+//function to fetch integredients and measurements
+const fetchIngredients=(meal)=>{
+    let ingredientslist = "";
+    for(let i = 1;i<=20;i++){
+        const ingredient = meal[`strIngredient${i}`];
+        if(ingredient){
+            const measure = meal[`strMeasure${i}`];
+            ingredientslist+= `<li>${measure} ${ingredient}</li>`
+        }
+        else{
+            break;
+        }
+    }
+    return ingredientslist;
+}
+
+recipeCloseBtn.addEventListener('click',()=>{
+    recipeDetialsContent.parentElement.style.display = "none";
+})
 
 searchBtn.addEventListener('click', (e)=>{
     e.preventDefault();
