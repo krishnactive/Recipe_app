@@ -43,9 +43,9 @@ const openRecipePopup=(meal)=>{
         <h2 class="recipeName">${meal.strMeal}</h2>
         <h3>Ingredients</h3>
         <ul class = "IngredientList">${fetchIngredients(meal)}</ul>
-        <div>
+        <div class = "recipeinstructions">
             <h3>Instructions:</h3>
-            <p class = "recipeinstructions">${meal.strInstructions}</p>
+            <p >${meal.strInstructions}</p>
         </div>
     `
    
@@ -59,7 +59,7 @@ const fetchIngredients=(meal)=>{
         const ingredient = meal[`strIngredient${i}`];
         if(ingredient){
             const measure = meal[`strMeasure${i}`];
-            ingredientslist+= `<li>${measure} ${ingredient}</li>`
+            ingredientslist += `<li>${measure} ${ingredient}</li>`
         }
         else{
             break;

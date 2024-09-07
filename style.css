@@ -19,6 +19,7 @@ header nav{
     z-index: 1;
 
 }
+
 header nav h1{
     font-size: 26px;
     font-weight: 700;
@@ -121,6 +122,38 @@ form button[type="submit"]:hover,.recipe button:hover{
     transition: all 0.5s ease-in-out;
     overflow-y:scroll;
     
+}
+
+.recipe-details-content{
+    padding: 30px;
+}
+
+.recipeName{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.ingredientList li{
+    margin-bottom: 10px;
+    margin-left: -20px;
+}
+
+.recipeInstruction p{
+    line-height: 30px;
+}
+
+
+/* Adding scrollbar to recipe details popup */
+
+.recipe-details::-webkit-scrollbar{
+    width: 10px;
+
+}
+
+.recipe-details::-webkit-scrollbar-thumb{
+    background-color:rgb(126, 104, 104) ;
+    border-radius: 16px;
+    --webkit-border-radius:16px;
 }
 
 
