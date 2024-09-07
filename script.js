@@ -13,8 +13,12 @@ const fetchRecipes = async (query)=>{
     response.meals.forEach(meal=>{
         const recipeDiv = document.createElement("div");//creating div that is element
         recipeDiv.classList.add("recipe"); //adding classes to newly formed div
-        recipeDiv.innerHTML = ` //defining inner html
+        //defining inner html
+        recipeDiv.innerHTML = ` 
         <img src = "${meal.strMealThumb}">
+        <h3>${meal.strMeal}</h3>
+        <p>${meal.strArea}</p>
+        <p>${meal.strCategory}</p>
         `
         recipeContainer.appendChild(recipeDiv); //adding recipe which is created get add to the recipe container
     })
